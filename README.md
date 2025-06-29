@@ -37,23 +37,38 @@ This project simulates a real-world pipeline where:
 ```bash
 .
 ├── notebooks/
-│   ├── source_to_bronze_loader.ipynb     # Incremental load using Autoloader
-│   ├── bronze_to_silver_transforms.ipynb # Cleansing, deduplication, logic
-│   ├── silver_to_gold_facts.ipynb        # Dimension and Fact tables (SCD1)
+│   ├── Bronze_Layer.ipynb     # Incremental load using Autoloader
+│   ├── Parameter.ipynb
+│   ├── Silver_Customers.ipynb # Cleansing, deduplication, logic
+│   ├── Silver_Orders.py
+│   ├── Silver_Products.ipynb
+│   ├── Silver_Regions.ipynb
+│   ├── Gold_Customers.ipynb        # Dimension and Fact tables (SCD1)
+│   ├── Gold_Products.ipynb
+│   ├── Gold_Orders.ipynb
 │   └── scd_dimensional_dlt.py            # DLT pipeline for SCD Type 2
+│   └── Databricks ETE Project.dbc
+
 │
-├── pipelines/
-│   └── data_factory_pipeline.json        # ADF pipeline export
-│
+├── orchestrated/
+│   └── dlt_pipeline_yaml_code        # ADF pipeline export
+│   └── Orchestrated Job Python Code
+
 ├── data/
 │   └── sample-files/                     # Sample Parquet files
-│       ├── sample_file_1.parquet
-│       └── sample_file_2.parquet
+│       ├── customer_first.parquet
+│       └── customers_second.parquet
+│       └── orders_first.parquet
+│       └── orders_second.parquet
+│       └── products_first.parquet
+│       └── products_second.parquet
+│       └── regions.parquet
 │
 ├── images/
 │   ├── architecture-diagram.png
 │   ├── adf-pipeline.png
 │   ├── orchestrated-job-screenshot.png
 │   └── dlt-pipeline-screenshot.png
+│   └── unity-data-catalog-screenshot.png
 │
 └── README.md

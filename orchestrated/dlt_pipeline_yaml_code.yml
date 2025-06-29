@@ -1,0 +1,11 @@
+resources:
+  pipelines:
+    pipeline_dlt_dim_product_pipeline:
+      name: dlt_dim_product_pipeline
+      libraries:
+        - notebook:
+            path: /Users/chotusaikh253@gmail.com/Databricks ETE Project/Gold_Products
+      schema: gold
+      photon: true
+      catalog: databricks_cata
+      serverless: true
